@@ -1,0 +1,155 @@
+void main() {
+  // Define Variables
+  int myInt = 42;
+  double myDouble = 42.42;
+  String myString = "Hello, Dart!";
+  bool myBool = true;
+  List<int> myList = [1, 2, 3, 4, 5];
+
+  print("Defined Variables:");
+  print("int: $myInt, double: $myDouble, String: $myString, bool: $myBool, List: $myList\n");
+
+  // Type Conversion
+  print("Type Conversion:");
+  print("String to int: ${stringToInt('123')}");
+  print("String to double: ${stringToDouble('123.45')}");
+  print("int to String: ${intToString(100)}");
+  print("int to double: ${intToDouble(100)}\n");
+
+  // Function for Conversion
+  convertAndDisplay("250");
+
+  // Control Flow
+  checkNumber(-5);
+  checkVotingEligibility(20);
+  printDayOfWeek(3);
+  
+  // Loops
+  print("\nFor Loop:");
+  forLoop();
+
+  print("\nWhile Loop:");
+  whileLoop();
+
+  print("\nDo-While Loop:");
+  doWhileLoop();
+
+  // Complex Example
+  List<int> numbers = [3, 12, 45, 7, 100, 150, 2];
+  processNumbers(numbers);
+}
+
+// Functions for Type Conversion
+int stringToInt(String value) => int.parse(value);
+double stringToDouble(String value) => double.parse(value);
+String intToString(int value) => value.toString();
+double intToDouble(int value) => value.toDouble();
+
+// Function for Conversion and Display
+void convertAndDisplay(String numberStr) {
+  int numberInt = stringToInt(numberStr);
+  double numberDouble = stringToDouble(numberStr);
+  print("\nConvert and Display:");
+  print("String '$numberStr' to int: $numberInt");
+  print("String '$numberStr' to double: $numberDouble\n");
+}
+
+// Control Flow - If-Else Statements
+void checkNumber(int num) {
+  if (num > 0) {
+    print("$num is positive.");
+  } else if (num < 0) {
+    print("$num is negative.");
+  } else {
+    print("$num is zero.");
+  }
+}
+
+void checkVotingEligibility(int age) {
+  if (age >= 18) {
+    print("Eligible to vote.");
+  } else {
+    print("Not eligible to vote.");
+  }
+}
+
+// Control Flow - Switch Case
+void printDayOfWeek(int day) {
+  print("\nDay of the week:");
+  switch (day) {
+    case 1:
+      print("Monday");
+      break;
+    case 2:
+      print("Tuesday");
+      break;
+    case 3:
+      print("Wednesday");
+      break;
+    case 4:
+      print("Thursday");
+      break;
+    case 5:
+      print("Friday");
+      break;
+    case 6:
+      print("Saturday");
+      break;
+    case 7:
+      print("Sunday");
+      break;
+    default:
+      print("Invalid day.");
+  }
+}
+
+// Loops
+void forLoop() {
+  for (int i = 1; i <= 10; i++) {
+    print(i);
+  }
+}
+
+void whileLoop() {
+  int i = 10;
+  while (i >= 1) {
+    print(i);
+    i--;
+  }
+}
+
+void doWhileLoop() {
+  int i = 1;
+  do {
+    print(i);
+    i++;
+  } while (i <= 5);
+}
+
+// Combining Data Types and Control Flow
+void processNumbers(List<int> numbers) {
+  print("\nProcessing Numbers:");
+  for (int num in numbers) {
+    print("Number: $num");
+
+    // Check if even or odd
+    if (num % 2 == 0) {
+      print("$num is even.");
+    } else {
+      print("$num is odd.");
+    }
+
+    // Categorize number using switch
+    switch (num) {
+      case <= 10:
+        print("$num is small.");
+        break;
+      case <= 100:
+        print("$num is medium.");
+        break;
+      default:
+        print("$num is large.");
+    }
+    print("---");
+  }
+}
